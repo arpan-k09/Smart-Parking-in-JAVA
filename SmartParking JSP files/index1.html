@@ -1,0 +1,138 @@
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>SIGN UP!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="main.css" />
+
+		
+		
+		 
+
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.jsp" class="logo">Smart Parking</a>
+				<nav id="nav">
+					<a href="index.jsp">Home</a>
+                                        <%
+                                        String s=(String)session.getAttribute("name");
+                                        if (s != null) 
+                                        {
+                                            out.println("<a href='after_l.jsp'>Services</a>"
+                                                    + "<a href='c_us.jsp'>Contact Us</a>"
+                                                    + "<a href='#'>"+s+"</a>"
+                                                    + "<a href='php/logout.jsp'>Logout</a>");
+                                        } else 
+                                        {
+                                            out.println("<a href='signup.jsp'>Register</a>"
+                                            +"<a href='login.jsp'>Login</a>"
+                                            +"<a href='after_l.jsp'>Services</a>"
+                                            +"<a href='c_us.jsp'>Contact Us</a>");
+                                        }
+                                        
+                                        
+                                        %>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Main -->
+			<section id="main">
+				<div class="inner">
+					
+
+					<!-- Form -->
+						<section>
+							<h3>Registration Form</h3><hr>
+							<form name="myForm" method="post" action="sign.jsp" onsubmit="return validateForm()">
+								<div class="row uniform 50%">
+									
+									<div class="6u 12u$(xsmall)">
+										<input type="text" name="fname" id="fname" value="" placeholder="First Name" />
+									</div>
+									
+									<div class="6u 12u$(xsmall)">
+										<input type="text" name="lname" id="lname" value="" placeholder="Last Name" />
+									</div>
+									
+									<div class="12u$">
+										<input type="email" name="email" id="email" value="" placeholder="Email" />
+									</div>
+									
+									<div class="12u$">
+										<input type="text" name="mob_num" id="mob_num" value="" placeholder="Mobile Number" />
+									</div>
+
+									<div class="12u$">
+										<input type="text" name="acc_num" id="acc_num" value="" placeholder="Enter Account Number (Ex. 0000000000000000)" />
+									</div>
+
+									
+
+									<div class="6u 12u$(xsmall)">
+										<input type="Password" name="pass" id="pass" value="" placeholder="Password (Min 8 char.)" />
+									</div>
+									
+									<div class="6u 12u$(xsmall)">
+										<input type="Password" name="con_pass" id="con_pass" value="" placeholder="Confirm Password" />
+									</div>
+									
+									<div class="6u$ 12u$(small)">
+										<input type="checkbox" id="human" name="human">
+										<label for="human">I am not a robot</label>
+									</div>
+
+									
+									<div class="12u$">
+										<ul class="actions">
+											<li><input type="submit" value="Sign Up" class="special" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+							<hr>
+						</section>
+
+				</div>
+			</section>
+
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
